@@ -92,7 +92,7 @@ export interface S3PluginOptions extends PluginOptions {
     // Max number of files to upload in parallel.
     parallelLimit?: number;
 
-    // Max size of each part for multiparty uploads
+    // Max size of each part for multipart uploads
     partSize?: number;
 }
 
