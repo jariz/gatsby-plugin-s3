@@ -91,6 +91,9 @@ export interface S3PluginOptions extends PluginOptions {
 
     // Max number of files to upload in parallel.
     parallelLimit?: number;
+
+    // Max size of each part for multipart uploads
+    partSize?: number;
 }
 
 export const DEFAULT_OPTIONS: S3PluginOptions = {
@@ -106,6 +109,7 @@ export const DEFAULT_OPTIONS: S3PluginOptions = {
     removeNonexistentObjects: true,
     enableS3StaticWebsiteHosting: true,
     parallelLimit: 20,
+    partSize: 5,
 
     // the typing requires this for some reason...
     plugins: [],

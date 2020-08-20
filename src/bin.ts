@@ -244,6 +244,7 @@ const deploy = async ({ yes, bucket, userAgent }: { yes: boolean; bucket: string
                         try {
                             const upload = new S3.ManagedUpload({
                                 service: s3,
+                                partSize: (config.partSize as number) * 1024 * 1024,
                                 params: {
                                     Bucket: config.bucketName,
                                     Key: key,
@@ -301,6 +302,7 @@ const deploy = async ({ yes, bucket, userAgent }: { yes: boolean; bucket: string
                     try {
                         const upload = new S3.ManagedUpload({
                             service: s3,
+                            partSize: (config.partSize as number) * 1024 * 1024,
                             params: {
                                 Bucket: config.bucketName,
                                 Key: key,
